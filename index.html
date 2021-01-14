@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:url" content="https://michaellu2019.github.io/Frens-Where-U-At/visualizer/index.html" />
+		<meta property="og:title" content="DAVID" />
+		<meta property="og:description" content="YES DAVID" />
+		<meta property="og:image" content="https://i.postimg.cc/P5pg4bNf/screenshot.png" />
+		<title>DAVID</title>
+
+		<style>
+			section.main {
+				display: grid;
+				grid-template-columns: 1fr 2fr;
+			}
+
+			div.content {
+				padding: 5rem;
+				font-family: cursive;
+			}
+
+			img {
+				width: 100%;
+				display: block;
+				margin-bottom: -0.1rem;
+				transition: 0.5s ease-in-out;
+			}
+
+			#david-head.active {
+				transform: translate(-1.6rem, 0.8rem) rotate(-25deg);
+			}
+
+			.button {
+				border-radius: 10px;
+				background-color: #66bb6a;
+				color: #ffffff;
+				width: 10rem;
+				height: 3rem;
+				margin: 3rem 0rem;
+				font-size: 2rem;
+				text-align: center;
+				cursor: pointer;
+				transition: 0.25s ease-in-out;
+			}
+
+			.button:hover {
+				transform: scale(1.1);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<header class="primary"></header>
+			<main class="primary">
+				<section class="main">
+					<div class="content">
+						<img id="david-head" src="dvdh.png" />
+						<img id="david-body" src="dvdb.png" />
+					</div>
+					<div class="content">
+						<div class="button" onclick="father()">FATHER</div>
+						<div class="button" onclick="yes()">YES</div>
+					</div>
+
+					<audio id="father" src="father.mp3">
+		                <source src="father.mp3">
+		            </audio>
+		            <audio id="yes" src="yes.mp3">
+		                <source src="yes.mp3">
+		            </audio>
+				</section>
+			</main>
+		</div>
+
+		<script type = "text/javascript">
+			function father() {
+				document.getElementById("david-head").classList.toggle("active");
+				document.getElementById("father").currentTime = 0;
+				document.getElementById("father").play();
+				setTimeout(function() {
+					document.getElementById("david-head").classList.toggle("active");
+				}, 1000);
+			}
+
+			function yes() {
+				document.getElementById("david-head").classList.toggle("active");
+				document.getElementById("yes").currentTime = 0;
+				document.getElementById("yes").play();
+				setTimeout(function() {
+					document.getElementById("david-head").classList.toggle("active");
+				}, 2000);
+			}
+		</script>
+	</body>
+</html>
